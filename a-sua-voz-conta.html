@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Participe na vida cívica do concelho de Anadia. Envie sugestões, preocupações ou propostas diretamente para o vereador José Menezes.">
+  <title>A Sua Voz Conta | José Menezes — Vereador de Anadia</title>
+  
+  <!-- Favicon para todos os navegadores -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- EmailJS SDK (Preparado para envio real após configuração das chaves) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- Header / Navbar Principal (Fixa no topo) -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <!-- Logótipo de José Menezes (Canto Superior Esquerdo - Estilo partidochega.pt) -->
+      <a href="index.html" class="logo" id="logoJoseMenezes" title="José Menezes — Vereador da Câmara Municipal de Anadia" aria-label="Logótipo de José Menezes">
+        <img src="assets/images/logo-jose-menezes.png" alt="Logótipo de José Menezes" class="logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="compromissos.html" class="nav-link">Medidas Concretizadas</a></li>
+          <li><a href="a-sua-voz-conta.html" class="nav-link active">A Sua Voz Conta</a></li>
+          <li><a href="reunioes.html" class="nav-link">Reuniões</a></li>
+          <li><a href="concelhia.html" class="nav-link">Concelhia</a></li>
+          <li><a href="freguesias.html" class="nav-link">Freguesias</a></li>
+          <li><a href="militantes.html" class="nav-link">Militantes</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="comunidade.html" class="btn btn-primary btn-sm">
+            Comunidade
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero da Página -->
+    <section class="page-hero">
+      <div class="container page-hero-container">
+        <span class="section-tag">Participação Cidadã</span>
+        <h1 class="page-hero-title">A Sua Voz Conta</h1>
+        <p class="page-hero-subtitle">
+          O concelho de Anadia faz-se com a voz de todos os munícipes. Partilhe problemas locais, ideias para a sua freguesia ou preocupações que devam ser levadas às Reuniões de Câmara.
+        </p>
+      </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="participacao-layout">
+          <!-- Coluna Esquerda: Como Funciona & Informação -->
+          <div class="participacao-sidebar">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Partilhe a Sua Mensagem</h4>
+                <p>Descreva com detalhe a situação, localização e a melhoria pretendida para a sua rua, bairro ou freguesia.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Identificação &amp; Contacto</h4>
+                <p>Indique o seu nome completo e, caso pretenda obter resposta por parte do gabinete, forneça o seu email de contacto.</p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Intervenção Autárquica</h4>
+                <p>Todas as participações são analisadas diretamente pela equipa do vereador José Menezes para fundamentação de requerimentos e propostas.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Formulário de Participação -->
+          <div class="participacao-form-card">
+            <h2 class="form-title">Envie a sua Sugestão ou Preocupação</h2>
+            <p class="form-subtitle">Preencha os campos abaixo para submeter a sua mensagem ao gabinete da vereação.</p>
+
+            <form id="participacaoForm" novalidate>
+              <!-- Campo Anti-Spam (Honeypot invisível para humanos) -->
+              <input type="text" name="_hp_security" style="display:none;" tabindex="-1" autocomplete="off">
+
+              <!-- Linha: Nome e Email -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nome">
+                    O seu Nome <span class="required">*</span>
+                  </label>
+                  <input type="text" id="nome" name="nome" class="form-control" placeholder="O seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">
+                    Email para Resposta <span class="hint">(Opcional)</span>
+                  </label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="exemplo@correio.pt">
+                </div>
+              </div>
+
+              <!-- Seleção da Freguesia (11 opções oficiais exigidas) -->
+              <div class="form-group">
+                <label for="freguesia">
+                  Freguesia ou Âmbito Territorial <span class="required">*</span>
+                </label>
+                <select id="freguesia" name="freguesia" class="form-control" required>
+                  <option value="" disabled selected>Selecione uma opção...</option>
+                  <option value="Município de Anadia — Geral">Município de Anadia — Geral</option>
+                  <option value="Avelãs de Caminho">Avelãs de Caminho</option>
+                  <option value="Avelãs de Cima">Avelãs de Cima</option>
+                  <option value="Moita">Moita</option>
+                  <option value="Sangalhos">Sangalhos</option>
+                  <option value="São Lourenço do Bairro">São Lourenço do Bairro</option>
+                  <option value="Vila Nova de Monsarros">Vila Nova de Monsarros</option>
+                  <option value="Vilarinho do Bairro">Vilarinho do Bairro</option>
+                  <option value="União das Freguesias de Amoreira da Gândara, Paredes do Bairro e Ancas">União das Freguesias de Amoreira da Gândara, Paredes do Bairro e Ancas</option>
+                  <option value="União das Freguesias de Arcos e Mogofores">União das Freguesias de Arcos e Mogofores</option>
+                  <option value="União das Freguesias de Tamengos, Aguim e Óis do Bairro">União das Freguesias de Tamengos, Aguim e Óis do Bairro</option>
+                </select>
+              </div>
+
+              <!-- Área Temática / Assunto (Obrigatório) -->
+              <div class="form-group">
+                <label for="assunto">
+                  Área Temática / Assunto <span class="required">*</span>
+                </label>
+                <select id="assunto" name="assunto" class="form-control" required>
+                  <option value="" disabled selected>Selecione a área temática...</option>
+                  <option value="Assunto Geral">Assunto Geral</option>
+                  <option value="Obras e Vias Públicas">Obras, Estradas e Pavimentação</option>
+                  <option value="Saúde e Cuidados Médicos">Saúde e Centro de Saúde</option>
+                  <option value="Ambiente, Água e Saneamento">Água, Resíduos e Saneamento</option>
+                  <option value="Segurança e Policiamento">Segurança e Iluminação Pública</option>
+                  <option value="Educação e Juventude">Educação, Escolas e Juventude</option>
+                  <option value="Agricultura e Vitivinicultura">Agricultura e Caminhos Rurais</option>
+                  <option value="Outro">Outro Tema</option>
+                </select>
+              </div>
+
+              <!-- Mensagem / Sugestão -->
+              <div class="form-group">
+                <label for="mensagem">
+                  A sua Sugestão ou Preocupação <span class="required">*</span>
+                </label>
+                <textarea id="mensagem" name="mensagem" class="form-control" rows="5" placeholder="Descreva a sua preocupação, situação ocorrida ou sugestão concreta para o município de Anadia..." required maxlength="1200"></textarea>
+                <span class="char-counter" id="charCounter">0 / 1200 carateres</span>
+              </div>
+
+              <!-- Botão de Envio -->
+              <button type="submit" id="submitBtn" class="btn btn-primary btn-block btn-lg">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                Enviar Sugestão
+              </button>
+
+              <!-- Feedback / Alerta -->
+              <div id="formFeedback" class="form-feedback" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <div class="logo-symbol" style="width: 38px; height: 38px; font-size: 1rem;">JM</div>
+            <div>
+              <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">JOSÉ MENEZES</strong>
+              <span style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase;">Vereador de Anadia</span>
+            </div>
+          </a>
+          <p>
+            Canal de proximidade e escuta ativa de todos os cidadãos das dez freguesias do concelho de Anadia.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navegação</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="compromissos.html">Medidas Concretizadas</a></li>
+            <li><a href="a-sua-voz-conta.html">A Sua Voz Conta</a></li>
+            <li><a href="reunioes.html">Reuniões de Câmara</a></li>
+            <li><a href="concelhia.html">Concelhia</a></li>
+            <li><a href="freguesias.html">Freguesias</a></li>
+            <li><a href="militantes.html">Militantes</a></li>
+            <li><a href="comunidade.html">Comunidade WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Freguesias Abrangidas</h4>
+          <ul class="footer-links-list" style="font-size: 0.8125rem;">
+            <li>Avelãs de Caminho</li>
+            <li>Avelãs de Cima</li>
+            <li>Moita</li>
+            <li>Sangalhos</li>
+            <li>São Lourenço do Bairro</li>
+            <li>Vila Nova de Monsarros</li>
+            <li>Vilarinho do Bairro</li>
+            <li>UF Amoreira da Gândara, Paredes, Ancas</li>
+            <li>UF Arcos e Mogofores</li>
+            <li>UF Tamengos, Aguim, Óis do Bairro</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Gabinete da Vereação</h4>
+          <p style="font-size: 0.875rem; color: #9CA3AF; line-height: 1.6;">
+            Praça do Município<br>
+            3780-215 Anadia, Portugal
+          </p>
+          <div class="footer-social-icons">
+            <a href="#" class="footer-social-btn" aria-label="Facebook" data-config-link="facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Instagram" data-config-link="instagram">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="comunidade.html" class="footer-social-btn" aria-label="WhatsApp" data-config-link="whatsapp">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 José Menezes — Todos os direitos reservados.</div>
+        <div><a href="#header">Voltar ao topo ↑</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/a-sua-voz-conta.js"></script>
+</body>
+</html>

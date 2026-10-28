@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#251F52"/>
+      <stop offset="60%" stop-color="#1D1744"/>
+      <stop offset="100%" stop-color="#130F30"/>
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2E285F"/>
+      <stop offset="100%" stop-color="#181338"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0A071E" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo Azul Escuro -->
+  <rect width="400" height="480" rx="8" fill="url(#bgNavy)"/>
+
+  <!-- Linhas subtis geométricas institucionais -->
+  <g stroke="#3A3375" stroke-width="0.75" opacity="0.35">
+    <line x1="50" y1="0" x2="50" y2="480"/>
+    <line x1="150" y1="0" x2="150" y2="480"/>
+    <line x1="250" y1="0" x2="250" y2="480"/>
+    <line x1="350" y1="0" x2="350" y2="480"/>
+    <line x1="0" y1="100" x2="400" y2="100"/>
+    <line x1="0" y1="200" x2="400" y2="200"/>
+    <line x1="0" y1="300" x2="400" y2="300"/>
+    <line x1="0" y1="400" x2="400" y2="400"/>
+  </g>
+
+  <!-- Brilho subtil superior -->
+  <circle cx="200" cy="160" r="120" fill="#E30613" opacity="0.08"/>
+
+  <!-- Silhueta Masculina Formal -->
+  <g filter="url(#shadow)">
+    <!-- Fato / Ombros -->
+    <path d="M60 480 C 60 360, 110 320, 150 295 L 165 315 L 200 345 L 235 315 L 250 295 C 290 320, 340 360, 340 480 Z" fill="url(#suitGrad)"/>
+    
+    <!-- Camisa Branca -->
+    <path d="M165 295 L 200 340 L 235 295 L 218 280 L 200 295 L 182 280 Z" fill="#FFFFFF"/>
+    
+    <!-- Gravata Vermelha Oficial (#E30613) -->
+    <path d="M192 300 L 208 300 L 212 370 L 200 430 L 188 370 Z" fill="#E30613"/>
+    <polygon points="190,300 210,300 206,322 194,322" fill="#B3040E"/>
+
+    <!-- Pescoço -->
+    <path d="M175 220 L 225 220 L 225 285 L 175 285 Z" fill="#D5D9E2"/>
+
+    <!-- Rosto Silhueta -->
+    <ellipse cx="200" cy="175" rx="54" ry="64" fill="#E8ECF4"/>
+
+    <!-- Cabelo Executivo -->
+    <path d="M146 175 C 146 120, 170 105, 200 105 C 230 105, 254 120, 254 175 C 254 145, 240 115, 200 115 C 160 115, 146 145, 146 175 Z" fill="#3A3366"/>
+  </g>
+
+  <!-- Caixa de Aviso de Foto na Base -->
+  <rect x="24" y="420" width="352" height="42" rx="4" fill="rgba(29, 23, 68, 0.92)" stroke="#3A3375" stroke-width="1"/>
+  <text x="200" y="446" fill="#F1F3F5" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    Espaço reservado para fotografia oficial
+  </text>
+</svg>
