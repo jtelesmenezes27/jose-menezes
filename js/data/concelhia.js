@@ -28,34 +28,37 @@ const CONCELHIA_DATA = {
     },
     {
       id: 3,
-      nome: "Ricardo Marques Barros",
-      cargo: "Adjunto",
-      militante: "77222",
-      foto: "assets/images/concelhia/ricardo-barros.jpg"
+      nome: "Daniela da Costa Silva",
+      cargo: "Secretária",
+      militante: "70459",
+      foto: "assets/images/placeholder-avatar.svg"
     },
     {
       id: 4,
+      nome: "José Marinho Machado",
+      cargo: "Adjunto",
+      militante: "3639",
+      foto: "assets/images/placeholder-avatar.svg"
+    },
+    {
+      id: 5,
       nome: "Miriam Machado Santos",
       cargo: "Adjunta",
       militante: "75541",
       foto: "assets/images/concelhia/miriam-santos.jpg"
     },
     {
-      id: 5,
-      nome: "Membro Demonstrativo 5",
-      cargo: "Vogal",
-      foto: "assets/images/concelhia/membro-casaco-bege.jpg"
-    },
-    {
       id: 6,
-      nome: "Membro Demonstrativo 6",
-      cargo: "Vogal",
-      foto: "assets/images/placeholder-avatar.svg"
+      nome: "Ricardo Marques Barros",
+      cargo: "Adjunto",
+      militante: "77222",
+      foto: "assets/images/concelhia/ricardo-barros.jpg"
     },
     {
       id: 7,
-      nome: "Membro Demonstrativo 7",
-      cargo: "Vogal",
+      nome: "Renato Filipe Reis",
+      cargo: "Adjunto",
+      militante: "77012",
       foto: "assets/images/placeholder-avatar.svg"
     }
   ],

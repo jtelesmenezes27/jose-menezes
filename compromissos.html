@@ -22,16 +22,9 @@
   <!-- Header / Navbar Principal -->
   <header class="header" id="header">
     <div class="container nav-container">
-      <!-- Logótipo de José Menezes -->
-      <a href="index.html" class="logo" id="logoJoseMenezes" title="José Menezes — Vereador da Câmara Municipal de Anadia" aria-label="Logótipo de José Menezes">
+      <a href="index.html" class="logo" id="logoJoseMenezes" title="José Menezes — Vereador não executivo da Câmara Municipal de Anadia" aria-label="Logótipo de José Menezes">
         <img src="assets/images/logo-jose-menezes.png" alt="Logótipo de José Menezes" class="logo-img">
       </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
 
       <nav class="navbar" id="navbar">
         <ul class="nav-list">
@@ -39,16 +32,21 @@
           <li><a href="compromissos.html" class="nav-link active">Medidas Concretizadas</a></li>
           <li><a href="a-sua-voz-conta.html" class="nav-link">A Sua Voz Conta</a></li>
           <li><a href="reunioes.html" class="nav-link">Reuniões</a></li>
+          <li><a href="deputados-municipais.html" class="nav-link">Deputados Municipais</a></li>
           <li><a href="concelhia.html" class="nav-link">Concelhia</a></li>
           <li><a href="freguesias.html" class="nav-link">Freguesias</a></li>
           <li><a href="militantes.html" class="nav-link">Militantes</a></li>
+          <li><a href="comunidade.html" class="nav-link">Comunidade</a></li>
         </ul>
-        <div class="nav-cta">
-          <a href="comunidade.html" class="btn btn-primary btn-sm">
-            Comunidade
-          </a>
-        </div>
       </nav>
+
+      <a href="index.html" class="header-anadia-mark" aria-label="CHEGA Anadia">ANADIA</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -94,22 +92,29 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Coluna 1: Identidade -->
         <div class="footer-col-brand">
           <a href="index.html" class="footer-logo">
-            <img src="assets/images/logo-jose-menezes.png" alt="Logótipo de José Menezes" style="height: 38px; width: auto; max-width: 100%; display: block;">
+            <div class="logo-symbol" style="width: 38px; height: 38px; font-size: 1rem;">JM</div>
+            <div>
+              <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">JOSÉ MENEZES</strong>
+              <span style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase;">Vereador não executivo da Câmara Municipal de Anadia</span>
+            </div>
           </a>
           <p>
-            Prestação de contas contínua e transparente das medidas concretizadas perante os cidadãos do concelho de Anadia.
+            Espaço oficial de prestação de contas, transparência e contacto direto com os munícipes do concelho de Anadia.
           </p>
         </div>
 
+        <!-- Coluna 2: Navegação -->
         <div>
-          <h4 class="footer-heading">Navegação</h4>
+          <h4 class="footer-heading">Páginas do Website</h4>
           <ul class="footer-links-list">
             <li><a href="index.html">Início</a></li>
             <li><a href="compromissos.html">Medidas Concretizadas</a></li>
             <li><a href="a-sua-voz-conta.html">A Sua Voz Conta</a></li>
             <li><a href="reunioes.html">Reuniões de Câmara</a></li>
+            <li><a href="deputados-municipais.html">Deputados Municipais</a></li>
             <li><a href="concelhia.html">Concelhia</a></li>
             <li><a href="freguesias.html">Freguesias</a></li>
             <li><a href="militantes.html">Militantes</a></li>
@@ -117,34 +122,45 @@
           </ul>
         </div>
 
+        <!-- Coluna 3: Freguesias de Anadia -->
         <div>
           <h4 class="footer-heading">Concelho de Anadia</h4>
           <ul class="footer-links-list" style="font-size: 0.8125rem;">
             <li><a href="freguesias/arcos-e-mogofores.html">Arcos e Mogofores</a></li>
-            <li><a href="freguesias/amoreira-da-gandara-paredes-do-bairro-e-ancas.html">Amoreira da Gândara...</a></li>
+            <li><a href="freguesias/amoreira-da-gandara-paredes-do-bairro-e-ancas.html">Amoreira da Gândara, Paredes do Bairro e Ancas</a></li>
             <li><a href="freguesias/avelas-de-caminho.html">Avelãs de Caminho</a></li>
             <li><a href="freguesias/avelas-de-cima.html">Avelãs de Cima</a></li>
             <li><a href="freguesias/moita.html">Moita</a></li>
             <li><a href="freguesias/sangalhos.html">Sangalhos</a></li>
             <li><a href="freguesias/sao-lourenco-do-bairro.html">São Lourenço do Bairro</a></li>
-            <li><a href="freguesias/tamengos-aguim-e-ois-do-bairro.html">Tamengos, Aguim e Óis</a></li>
+            <li><a href="freguesias/tamengos-aguim-e-ois-do-bairro.html">Tamengos, Aguim e Óis do Bairro</a></li>
             <li><a href="freguesias/vila-nova-de-monsarros.html">Vila Nova de Monsarros</a></li>
             <li><a href="freguesias/vilarinho-do-bairro.html">Vilarinho do Bairro</a></li>
           </ul>
         </div>
 
+        <!-- Coluna 4: Contactos & Informação Institucional -->
         <div>
           <h4 class="footer-heading">Gabinete da Vereação</h4>
-          <p style="font-size: 0.875rem; color: #9CA3AF; line-height: 1.6;">
+          <p style="font-size: 0.875rem; color: #9CA3AF; line-height: 1.6; margin-bottom: 1rem;">
+            Câmara Municipal de Anadia<br>
             Praça do Município<br>
             3780-215 Anadia, Portugal
+          </p>
+          <p style="font-size: 0.8125rem; color: #6B7280; line-height: 1.5;">
+            Estrutura política e autárquica ao serviço de Anadia, norteada pelos princípios de rigor, transparência e proximidade com as populações.
           </p>
         </div>
       </div>
 
+      <!-- Barra de Direitos -->
       <div class="footer-bottom">
-        <div>&copy; 2026 José Menezes — Todos os direitos reservados.</div>
-        <div><a href="#header">Voltar ao topo &uarr;</a></div>
+        <div>
+          &copy; 2026 José Menezes — Todos os direitos reservados.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#header">Voltar ao topo ↑</a>
+        </div>
       </div>
     </div>
   </footer>

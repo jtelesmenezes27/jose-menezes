@@ -54,9 +54,9 @@ const SITE_CONFIG = {
    * 4. Cole abaixo a sua Public Key, Service ID e Template ID.
    */
   emailjs: {
-    publicKey: "SUA_PUBLIC_KEY_AQUI",     // Ex: "user_a1b2c3d4e5f6g7h8i"
-    serviceId: "SEU_SERVICE_ID_AQUI",     // Ex: "service_anadia2026"
-    templateId: "SEU_TEMPLATE_ID_AQUI"    // Ex: "template_vozconta"
+    publicKey: "dau5nWAgyHd-t3k5t",
+    serviceId: "service_4zs6hy8",
+    templateId: "template_74w1pu3"
   },
 
   /**

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Oswald:wght@700&display=swap');
+
 /* ==========================================================================
    WEBSITE JOSÉ MENEZES — VEREADOR DA CÂMARA MUNICIPAL DE ANADIA
    Identidade Visual Institucional (Inspirada no Design do CHEGA)
@@ -150,17 +152,21 @@ button, input, textarea, select {
   transition: background-color var(--transition);
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
+.header .nav-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   height: var(--header-height);
+  max-width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 /* Logótipo no Canto Superior Esquerdo (Estilo partidochega.pt) */
 .logo {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   text-decoration: none;
   flex-shrink: 0;
   padding: 6px 0;
@@ -221,12 +227,34 @@ button, input, textarea, select {
 .navbar {
   display: flex;
   align-items: center;
+  justify-self: center;
+}
+
+/* Marca Direita "ANADIA" (Mesma tipografia condensada do logótipo CHEGA, sem barra vermelha) */
+.header-anadia-mark {
+  justify-self: end;
+  font-family: 'Barlow Condensed', 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 900;
+  font-size: 1.65rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #211C51;
+  text-decoration: none;
+  user-select: none;
+  transform: scaleY(1.05);
+  display: inline-block;
+}
+
+.header-anadia-mark:hover {
+  color: #211C51;
+  opacity: 0.9;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 .nav-link {
@@ -235,7 +263,7 @@ button, input, textarea, select {
   font-weight: 600;
   text-transform: none;
   letter-spacing: -0.005em;
-  padding: 0.45rem 0.65rem;
+  padding: 0.45rem 0.55rem;
   border-radius: var(--radius-xs);
   transition: color var(--transition);
   position: relative;
@@ -257,8 +285,8 @@ button, input, textarea, select {
   content: '';
   position: absolute;
   bottom: -22px;
-  left: 0.65rem;
-  right: 0.65rem;
+  left: 0.55rem;
+  right: 0.55rem;
   height: 2.5px;
   background-color: var(--color-red);
   border-radius: 2px;
@@ -1287,7 +1315,7 @@ button, input, textarea, select {
 
 .video-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-size: 0.75rem;
   color: var(--color-text-light);
@@ -2976,18 +3004,19 @@ textarea.form-control {
 
 .freguesia-card {
   background-color: #FFFFFF;
-  border: 1px solid var(--color-border-light);
+  border: 1.5px solid rgba(29, 23, 68, 0.25);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
-  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 12px rgba(29, 23, 68, 0.06);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   display: flex;
   flex-direction: column;
 }
 
 .freguesia-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(29, 23, 68, 0.09);
+  border-color: rgba(29, 23, 68, 0.45);
+  box-shadow: 0 10px 24px rgba(29, 23, 68, 0.12);
 }
 
 .freguesia-photo-box {
@@ -3628,13 +3657,42 @@ textarea.form-control {
     padding-bottom: 3rem;
   }
 
+  .header .nav-container {
+    display: grid;
+    grid-template-columns: max-content 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    padding: 0.55rem 1.25rem;
+    height: auto;
+    min-height: var(--header-height);
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0;
+  }
+
   .logo-img {
-    height: 38px;
-    max-height: 38px;
+    height: 36px;
+    max-height: 36px;
+  }
+
+  .header-anadia-mark {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    text-align: center;
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+    margin: 3px 0 0 0;
   }
 
   .nav-toggle {
     display: flex;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    justify-self: end;
   }
 
   .navbar {
@@ -3801,5 +3859,317 @@ textarea.form-control {
 
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* --- MODAL CENTRADO DE SUCESSO DO FORMULÁRIO --- */
+.form-success-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(29, 23, 68, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  opacity: 0;
+  animation: modalOverlayFadeIn 0.25s ease-out forwards;
+}
+
+.form-success-modal-card {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.38);
+  border-top: 5px solid #10B981;
+  transform: scale(0.9) translateY(12px);
+  opacity: 0;
+  animation: modalCardPopIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+.form-success-check-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ECFDF5;
+  border: 2px solid #A7F3D0;
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.35rem;
+  transform: scale(0);
+  animation: checkCirclePop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards;
+}
+
+.form-success-check-svg {
+  width: 42px;
+  height: 42px;
+  stroke: #10B981;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkDrawStroke 0.45s ease-out 0.35s forwards;
+}
+
+.form-success-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-bottom: 0.65rem;
+}
+
+.form-success-modal-desc {
+  font-size: 0.95rem;
+  color: #4B5563;
+  line-height: 1.55;
+  margin-bottom: 1.65rem;
+}
+
+.form-success-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  background-color: var(--color-navy);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.form-success-modal-btn:hover {
+  background-color: var(--color-red);
+  transform: translateY(-1px);
+}
+
+@keyframes modalOverlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalCardPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes checkCirclePop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes checkDrawStroke {
+  to { stroke-dashoffset: 0; }
+}
+
+/* --- PÁGINA INDIVIDUAL DE CADA FREGUESIA (SÍMBOLO + ELEITO 2025-2029) --- */
+.freguesia-mandato-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.75rem;
+}
+
+.freguesia-mandato-header .section-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.38rem 1.05rem;
+  border-radius: 999px;
+  background-color: rgba(227, 6, 19, 0.12);
+  color: var(--color-red);
+  margin-bottom: 0.75rem;
+}
+
+.freguesia-mandato-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+
+.freguesia-showcase-card {
+  flex: 0 0 215px;
+  width: 215px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1.5px solid rgba(29, 23, 68, 0.25);
+  box-shadow: 0 4px 12px rgba(29, 23, 68, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.freguesia-showcase-card.freguesia-showcase-card-wide {
+  flex: 0 0 255px;
+  width: 255px;
+}
+
+.freguesia-showcase-card.freguesia-showcase-card-wide .freguesia-showcase-media {
+  aspect-ratio: auto;
+  height: 286px;
+}
+
+.freguesia-showcase-card.freguesia-showcase-card-wide .freguesia-showcase-media.is-brasao img {
+  padding: 0.15rem;
+}
+
+.freguesia-showcase-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(29, 23, 68, 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+.freguesia-showcase-card-accent {
+  border-top: 4px solid var(--color-red);
+}
+
+.freguesia-showcase-card-navy {
+  border-top: 4px solid var(--color-navy);
+}
+
+.freguesia-showcase-media {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1.5px solid rgba(29, 23, 68, 0.15);
+}
+
+.freguesia-showcase-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.freguesia-showcase-media.is-brasao img {
+  object-fit: contain;
+  padding: 0.45rem;
+}
+
+.freguesia-showcase-body {
+  padding: 0.95rem 0.85rem 1.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.freguesia-showcase-badge {
+  display: inline-block;
+  align-self: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  background-color: rgba(227, 6, 19, 0.1);
+  color: var(--color-red);
+  margin-bottom: 0.2rem;
+}
+
+.freguesia-showcase-badge-navy {
+  background-color: rgba(29, 23, 68, 0.08);
+  color: var(--color-navy);
+}
+
+.freguesia-showcase-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.freguesia-showcase-subtitle {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-red);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0.1rem 0 0;
+}
+
+.freguesia-showcase-meta {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin: 0.1rem 0 0;
+}
+
+.freguesia-back-actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .freguesia-mandato-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 370px;
+  }
+
+  .freguesia-showcase-card,
+  .freguesia-showcase-card.freguesia-showcase-card-wide {
+    flex: initial;
+    width: 100%;
+  }
+
+  .freguesia-showcase-card.freguesia-showcase-card-wide .freguesia-showcase-media {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .freguesia-showcase-media.is-brasao img {
+    padding: 0.2rem;
+  }
+
+  .freguesia-showcase-body {
+    padding: 0.85rem 0.6rem 1rem;
+  }
+
+  .freguesia-showcase-title {
+    font-size: 0.88rem;
+  }
+
+  .freguesia-showcase-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .freguesia-showcase-meta {
+    font-size: 0.68rem;
   }
 }
