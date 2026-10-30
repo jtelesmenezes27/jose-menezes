@@ -6,6 +6,7 @@
  * 1. "nome": Nome completo do membro (ex: "António Manuel da Silva")
  * 2. "cargo": Cargo oficial que desempenha (ex: "Presidente", "Vice-Presidente", etc.)
  * 3. "foto": Caminho para o ficheiro de imagem vertical (ex: "assets/images/concelhia/presidente.jpg")
+ * 4. "militante": Número de militante (opcional, ex: "58540")
  */
 
 const CONCELHIA_DATA = {
@@ -13,33 +14,37 @@ const CONCELHIA_DATA = {
   comissaoPolitica: [
     {
       id: 1,
-      nome: "Membro Demonstrativo 1",
-      cargo: "Presidente da Comissão Política",
-      foto: "assets/images/placeholder-avatar.svg"
+      nome: "José Carlos Teles de Menezes",
+      cargo: "Presidente",
+      militante: "58540",
+      foto: "assets/images/concelhia/jose-menezes.png"
     },
     {
       id: 2,
-      nome: "Membro Demonstrativo 2",
+      nome: "Paulo Jorge Seabra Sampaio",
       cargo: "Vice-Presidente",
-      foto: "assets/images/placeholder-avatar.svg"
+      militante: "28504",
+      foto: "assets/images/concelhia/paulo-sampaio.png"
     },
     {
       id: 3,
-      nome: "Membro Demonstrativo 3",
-      cargo: "Secretário",
-      foto: "assets/images/placeholder-avatar.svg"
+      nome: "Ricardo Marques Barros",
+      cargo: "Adjunto",
+      militante: "77222",
+      foto: "assets/images/concelhia/ricardo-barros.jpg"
     },
     {
       id: 4,
-      nome: "Membro Demonstrativo 4",
-      cargo: "Vogal",
-      foto: "assets/images/placeholder-avatar.svg"
+      nome: "Miriam Machado Santos",
+      cargo: "Adjunta",
+      militante: "75541",
+      foto: "assets/images/concelhia/miriam-santos.jpg"
     },
     {
       id: 5,
       nome: "Membro Demonstrativo 5",
       cargo: "Vogal",
-      foto: "assets/images/placeholder-avatar.svg"
+      foto: "assets/images/concelhia/membro-casaco-bege.jpg"
     },
     {
       id: 6,

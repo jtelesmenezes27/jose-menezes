@@ -2475,10 +2475,18 @@ textarea.form-control {
 }
 
 .militante-hero-exemption-text {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   font-weight: 800;
   color: var(--color-navy);
   line-height: 1.45;
+  margin: 0;
+}
+
+.militante-hero-exemption-note {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -2826,12 +2834,16 @@ textarea.form-control {
 }
 
 .concelhia-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 .concelhia-card {
+  flex: 0 0 212px;
   background-color: #FFFFFF;
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-sm);
@@ -2852,7 +2864,7 @@ textarea.form-control {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(180deg, #F3F2F8 0%, #E5E3F0 100%);
+  background-color: #FFFFFF;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -2895,6 +2907,13 @@ textarea.form-control {
   margin-bottom: 0.5rem;
 }
 
+.concelhia-card-militante {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 .concelhia-card-sample-tag {
   display: inline-block;
   font-size: 0.6875rem;
@@ -2913,17 +2932,14 @@ textarea.form-control {
   opacity: 0.85;
 }
 
-@media (max-width: 1100px) {
-  .concelhia-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
-
 @media (max-width: 768px) {
   .concelhia-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.15rem;
+  }
+
+  .concelhia-card {
+    flex: 0 0 calc(50% - 0.6rem);
+    max-width: 212px;
   }
   
   .concelhia-card-body {
@@ -2939,13 +2955,7 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 480px) {
-  .concelhia-grid {
-    grid-template-columns: 1fr;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-}
+
 
 /* --- PÁGINA: FREGUESIAS DE ANADIA --- */
 .freguesias-section {
@@ -3215,13 +3225,18 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-  transition: transform var(--transition), box-shadow var(--transition);
+  background-color: #FFFFFF;
+  color: var(--color-navy);
+  border: 1px solid #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .comunidade-hero-action .btn-whatsapp:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  background-color: #F1F0F7;
+  color: var(--color-navy);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .comunidade-hero-note {

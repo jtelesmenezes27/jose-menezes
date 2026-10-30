@@ -217,6 +217,7 @@
             <div class="concelhia-card-body">
               <h3 class="concelhia-card-name">${escapeHtml(member.nome)}</h3>
               <p class="concelhia-card-role">${escapeHtml(member.cargo)}</p>
+              ${member.militante ? `<p class="concelhia-card-militante">Militante n.º ${escapeHtml(member.militante)}</p>` : ''}
             </div>
           </article>
         `;
