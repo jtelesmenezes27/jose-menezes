@@ -7,7 +7,7 @@ const VIDEOS_DATA = [
   {
     id: 1,
     titulo: "Anadia merece melhores acessos e uma ligação à A1!",
-    descricao: "A pedido de um vereador, o deputado defende a ligação à A1 e melhores infraestruturas para apoiar a economia de Anadia.",
+    descricao: "A pedido do vereador José Menezes, da Câmara Municipal de Anadia, o deputado defende a ligação à A1 e melhores infraestruturas para apoiar a economia de Anadia.",
     duracao: "01:58",
     youtubeId: "o2EY0SEgCkc",
     miniaturaUrl: "https://img.youtube.com/vi/o2EY0SEgCkc/hqdefault.jpg",

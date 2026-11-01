@@ -17,7 +17,7 @@ const SITE_CONFIG = {
   anoMandato: "2025–2029",
 
   // Hiperligação Oficial de Inscrição de Militantes
-  linkInscricaoMilitante: "https://portalchega.pt/",
+  linkInscricaoMilitante: "https://flw.pt/ZdMiHmP",
 
   // Hiperligação da Comunidade WhatsApp
   // Substitua pela hiperligação de convite real do seu grupo WhatsApp

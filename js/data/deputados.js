@@ -15,7 +15,7 @@ const DEPUTADOS_DATA = {
       id: 2,
       nome: "Américo Fernandes Simões",
       cargo: "Deputado Municipal",
-      foto: "assets/images/concelhia/americo-simoes.jpg"
+      foto: "assets/images/concelhia/americo-simoes.png"
     },
     {
       id: 3,
