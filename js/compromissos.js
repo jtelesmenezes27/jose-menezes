@@ -1,7 +1,6 @@
 /**
- * JOSÉ MENEZES — MEDIDAS CONCRETIZADAS (COMPROMISSOS.JS)
- * Apresentação exclusiva de propostas e medidas com implementação confirmada.
- * Sem estatísticas ou contadores.
+ * JOSÉ MENEZES — MEDIDAS CONCRETIZADAS E EM ANDAMENTO (COMPROMISSOS.JS)
+ * Apresentação das propostas e medidas autárquicas concretizadas e em andamento.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,65 +34,109 @@ function setupSearchInput() {
 }
 
 /**
- * Renderiza exclusivamente as propostas com estado 'Implementada'
+ * Retorna classe e texto da badge de estado
+ */
+function getEstadoBadge(estado) {
+  if (estado === 'Concretizada') {
+    return {
+      className: 'status-implementada',
+      label: 'CONCRETIZADA'
+    };
+  }
+  if (estado === 'Parcialmente concretizada') {
+    return {
+      className: 'status-implementada',
+      label: 'PARCIALMENTE CONCRETIZADA'
+    };
+  }
+  return {
+    className: 'status-em-execucao',
+    label: 'EM ANDAMENTO'
+  };
+}
+
+/**
+ * Ordem de prioridade dos estados:
+ * 1. Concretizada
+ * 2. Parcialmente concretizada
+ * 3. Em andamento
+ */
+function getEstadoOrder(estado) {
+  if (estado === 'Concretizada') return 1;
+  if (estado === 'Parcialmente concretizada') return 2;
+  return 3;
+}
+
+/**
+ * Renderiza todas as propostas da lista
  */
 function renderPropostas() {
   const container = document.getElementById('propostasContainer');
   if (!container) return;
 
-  // Filtragem estrita: apenas medidas cuja implementação esteja confirmada
-  const concretizadas = PROPOSTAS_DATA.filter(p => {
-    if (p.estado !== 'Implementada') return false;
-
+  const filtered = PROPOSTAS_DATA.filter(p => {
     if (!currentSearch) return true;
-    return p.titulo.toLowerCase().includes(currentSearch) ||
-           p.descricao.toLowerCase().includes(currentSearch) ||
-           p.categoria.toLowerCase().includes(currentSearch) ||
-           (p.ambito && p.ambito.toLowerCase().includes(currentSearch));
+    const term = currentSearch;
+    return (p.titulo && p.titulo.toLowerCase().includes(term)) ||
+           (p.categoria && p.categoria.toLowerCase().includes(term)) ||
+           (p.proposta && p.proposta.toLowerCase().includes(term)) ||
+           (p.pontoSituacao && p.pontoSituacao.toLowerCase().includes(term)) ||
+           (p.estado && p.estado.toLowerCase().includes(term));
   });
 
-  if (concretizadas.length === 0) {
+  // Ordenar: 1.º Concretizada, 2.º Parcialmente concretizada, 3.º Em andamento
+  filtered.sort((a, b) => getEstadoOrder(a.estado) - getEstadoOrder(b.estado));
+
+  if (filtered.length === 0) {
     container.innerHTML = `
-      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1.5rem; background: #FFFFFF; border: 1px dashed #CBD5E1; border-radius: 8px;">
-        <svg style="width: 44px; height: 44px; color: #94A3B8; margin: 0 auto 1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-        <h4 style="font-size: 1.15rem; font-weight: 700; color: #1D1744; margin-bottom: 0.5rem;">Nenhuma medida encontrada</h4>
-        <p style="color: #64748B; font-size: 0.9375rem; margin: 0;">Não foram encontradas medidas concretizadas correspondentes ao termo pesquisado.</p>
+      <div class="empty-state" style="grid-column: 1 / -1; padding: 3rem 1rem; text-align: center; background: #FFFFFF; border-radius: var(--radius-sm); border: 1px dashed var(--color-border);">
+        <p style="color: var(--color-text-muted); font-size: 1.05rem; margin: 0;">
+          Nenhuma medida encontrada para o termo pesquisado.
+        </p>
       </div>
     `;
     return;
   }
 
-  container.innerHTML = concretizadas.map(item => `
+  container.innerHTML = filtered.map(item => {
+    const badge = getEstadoBadge(item.estado);
+
+    return `
     <article class="proposta-card">
       <div class="proposta-card-header">
         <span class="proposta-category">${escapeHtml(item.categoria)}</span>
-        <span class="status-badge status-implementada">
+        <span class="status-badge ${badge.className}">
           <span class="status-dot"></span>
-          IMPLEMENTADA
+          ${badge.label}
         </span>
       </div>
 
       <div class="proposta-card-body">
-        <h3 class="proposta-title">${escapeHtml(item.titulo)}</h3>
-        <p class="proposta-desc">${escapeHtml(item.descricao)}</p>
+        <h3 class="proposta-title" style="margin-bottom: 1rem;">${escapeHtml(item.titulo)}</h3>
         
-        ${item.data ? `
-          <div class="proposta-date-row">
-            <span class="proposta-date-label">Concretização:</span>
-            <strong class="proposta-date-val">${escapeHtml(item.data)}</strong>
-          </div>
-        ` : ''}
+        <div style="margin-bottom: 0.85rem;">
+          <h4 style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-navy); font-weight: 800; letter-spacing: 0.05em; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.35rem;">
+            <span style="color: var(--color-red);">✦</span> O que propus
+          </h4>
+          <p class="proposta-desc" style="margin-bottom: 0; line-height: 1.55;">${escapeHtml(item.proposta)}</p>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-navy); font-weight: 800; letter-spacing: 0.05em; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.35rem;">
+            <span style="color: var(--color-navy);">✦</span> Ponto de situação
+          </h4>
+          <p class="proposta-desc" style="margin-bottom: 0; line-height: 1.55; color: #334155;">${escapeHtml(item.pontoSituacao)}</p>
+        </div>
       </div>
 
       <div class="proposta-card-footer">
         <button type="button" class="btn-medida-ver" onclick="openEvidenceModal(${item.id})">
-          VER
+          VER DETALHES
         </button>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 /**
@@ -108,7 +151,7 @@ function setupEvidenceModal() {
     modalOverlay.innerHTML = `
       <div class="modal-dialog">
         <div class="modal-header">
-          <h3 class="modal-title" id="evidenceModalTitle">Detalhes da Medida Concretizada</h3>
+          <h3 class="modal-title" id="evidenceModalTitle">Detalhes da Medida</h3>
           <button class="modal-close-btn" id="evidenceModalClose" aria-label="Fechar">&times;</button>
         </div>
         <div class="modal-body" id="evidenceModalBody">
@@ -136,14 +179,15 @@ function setupEvidenceModal() {
 
     const modalTitle = document.getElementById('evidenceModalTitle');
     const modalBody = document.getElementById('evidenceModalBody');
+    const badge = getEstadoBadge(item.estado);
 
     modalTitle.textContent = item.titulo;
     modalBody.innerHTML = `
       <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
         <span class="proposta-category">${escapeHtml(item.categoria)}</span>
-        <span class="status-badge status-implementada">
+        <span class="status-badge ${badge.className}">
           <span class="status-dot"></span>
-          IMPLEMENTADA
+          ${badge.label}
         </span>
       </div>
 
@@ -152,15 +196,17 @@ function setupEvidenceModal() {
         <p style="color: #1D1744; font-weight: 600; margin: 0;">${escapeHtml(item.ambito || 'Concelho de Anadia')}</p>
       </div>
 
-      <div style="margin-bottom: 1.5rem;">
-        <h4 style="font-size: 0.8125rem; text-transform: uppercase; color: #64748B; font-weight: 700; margin-bottom: 0.35rem; letter-spacing: 0.04em;">Descrição Integral da Medida</h4>
-        <p style="color: #475569; line-height: 1.65; margin: 0;">${escapeHtml(item.descricao)}</p>
+      <div style="margin-bottom: 1.35rem; background: #F8FAFC; padding: 1.15rem; border-radius: 8px; border-left: 3px solid var(--color-red);">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-navy); font-weight: 800; margin-bottom: 0.45rem; letter-spacing: 0.04em;">O que propus</h4>
+        <p style="color: #334155; line-height: 1.65; margin: 0;">${escapeHtml(item.proposta)}</p>
       </div>
 
-      <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.25rem; border-top: 1px solid #E2E8F0;">
-        <span style="font-size: 0.8125rem; color: #64748B;">
-          Data de Concretização: <strong>${escapeHtml(item.data || 'Registada')}</strong>
-        </span>
+      <div style="margin-bottom: 1.5rem; background: #F8FAFC; padding: 1.15rem; border-radius: 8px; border-left: 3px solid var(--color-navy);">
+        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--color-navy); font-weight: 800; margin-bottom: 0.45rem; letter-spacing: 0.04em;">Ponto de situação</h4>
+        <p style="color: #334155; line-height: 1.65; margin: 0;">${escapeHtml(item.pontoSituacao)}</p>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; align-items: center; padding-top: 1.25rem; border-top: 1px solid #E2E8F0;">
         <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('evidenceModalClose').click()">
           Fechar
         </button>

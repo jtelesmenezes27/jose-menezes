@@ -31,14 +31,14 @@ const CONCELHIA_DATA = {
       nome: "Daniela da Costa Silva",
       cargo: "Secretária",
       militante: "70459",
-      foto: "assets/images/placeholder-avatar.svg"
+      foto: "assets/images/concelhia/daniela-silva.jpg"
     },
     {
       id: 4,
       nome: "José Marinho Machado",
       cargo: "Adjunto",
       militante: "3639",
-      foto: "assets/images/placeholder-avatar.svg"
+      foto: "assets/images/concelhia/jose-machado.jpg"
     },
     {
       id: 5,

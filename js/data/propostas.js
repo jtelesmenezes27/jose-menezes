@@ -1,152 +1,76 @@
 /**
- * DADOS DEMONSTRATIVOS — COMPROMISSOS ELEITORAIS E PROPOSTAS
- * 
- * NOTA IMPORTANTE:
- * Os dados contidos neste ficheiro são exemplos ilustrativos para demonstrar o
- * funcionamento e a apresentação visual do website.
- * Não constituem factos ou realizações atribuídas a José Menezes.
- * Os dados reais definitivos serão inseridos posteriormente.
+ * DADOS OFICIAIS — MEDIDAS CONCRETIZADAS E EM ANDAMENTO
+ * Medidas e propostas autárquicas de José Menezes no concelho de Anadia.
  * 
  * Estados disponíveis:
- * - "Implementada"
- * - "Em execução"
- * - "Em análise"
- * - "Não implementada"
+ * - "Concretizada"
+ * - "Parcialmente concretizada"
+ * - "Em andamento"
  */
 
 const PROPOSTAS_DATA = [
   {
     id: 1,
-    titulo: "Transparência Total nas Deliberações e Contratos Públicos",
-    categoria: "Transparência & Gestão",
-    descricao: "Disponibilização pública e integral em formato aberto de todas as atas, contratos e despesas municipais no portal da autarquia, acessível a qualquer cidadão.",
-    estado: "Implementada",
-    data: "Fevereiro 2026",
-    ambito: "Concelho de Anadia",
-    evidencia: "Deliberação de Câmara n.º 14/2026 — Criação do Separador de Transparência Aberta",
-    documentoUrl: "assets/docs/exemplo-deliberacao-transparencia.pdf"
+    titulo: "Piscina municipal ao ar livre",
+    categoria: "Lazer & Desporto",
+    proposta: "Defendi a criação de uma praia fluvial ou de uma piscina municipal ao ar livre, mediante avaliação da viabilidade das duas opções. O objetivo é proporcionar um espaço de lazer seguro e acessível para famílias e jovens.",
+    pontoSituacao: "O Presidente da Câmara informou que está em curso um estudo para a piscina municipal ao ar livre, tendo excluído a opção de praia fluvial. Continuarei a acompanhar o processo e a defender a sua concretização.",
+    estado: "Em andamento",
+    data: "Mandato 2025–2029",
+    ambito: "Concelho de Anadia"
   },
   {
     id: 2,
-    titulo: "Plano Municipal de Apoio à Fixação de Médicos de Família",
-    categoria: "Saúde & Bem-Estar",
-    descricao: "Proposta de incentivos à instalação de médicos de família no concelho, com comparticipação de habitação e apoio à modernização dos centros de saúde.",
-    estado: "Em execução",
-    data: "Janeiro 2026",
-    ambito: "Concelho de Anadia",
-    evidencia: "Grupo de trabalho conjunto com a Administração Regional de Saúde em fase de regulamentação.",
-    documentoUrl: "assets/docs/exemplo-proposta-medicos.pdf"
+    titulo: "Parques de autocaravanas",
+    categoria: "Turismo & Economia",
+    proposta: "Propus a criação de parques de autocaravanas na Curia; em Vilarinho do Bairro (junto ao recinto da Feira Medieval) e nas Termas de Vale da Mó, para melhorar o acolhimento de visitantes e dinamizar o turismo e o comércio local.",
+    pontoSituacao: "O Presidente da Câmara concordou com a proposta e delegou na Vereadora Dra. Cristina o acompanhamento do estudo. Continuarei a acompanhar o desenvolvimento do processo.",
+    estado: "Em andamento",
+    data: "Mandato 2025–2029",
+    ambito: "Curia, Vilarinho do Bairro e Vale da Mó"
   },
   {
     id: 3,
-    titulo: "Isenção e Redução do IMI Familiar para Jovens Casais",
-    categoria: "Habitação & Economia",
-    descricao: "Fixação da taxa mínima de IMI no concelho e majoração do desconto IMI Familiar para famílias com dependentes a cargo na compra de habitação própria e permanente.",
-    estado: "Em execução",
-    data: "Dezembro 2025",
-    ambito: "Concelho de Anadia",
-    evidencia: "Aprovado na Assembleia Municipal o alargamento da dedução por dependente para o orçamento em vigor.",
-    documentoUrl: "assets/docs/exemplo-documento-imi.pdf"
+    titulo: "Pavilhão dos Desportos ao serviço do basquetebol e das escolas",
+    categoria: "Desporto & Educação",
+    proposta: "Durante a campanha, defendi a utilização do Pavilhão dos Desportos para a prática de basquetebol e para as aulas de Educação Física, colocando este equipamento ao serviço dos clubes e da comunidade escolar.",
+    pontoSituacao: "Esta utilização já é uma realidade. O Pavilhão dos Desportos acolhe o basquetebol e as aulas de Educação Física, dando resposta às necessidades dos desportistas e dos alunos.",
+    estado: "Concretizada",
+    data: "Concretizada",
+    ambito: "Concelho de Anadia"
   },
   {
     id: 4,
-    titulo: "Requalificação da Rede Viária e Caminhos Agrícolas Inter-Freguesias",
-    categoria: "Vias & Infraestruturas",
-    descricao: "Levantamento e plano de pavimentação urgente dos troços viários degradados nas zonas rurais e de ligação entre as diversas freguesias do concelho.",
-    estado: "Em análise",
-    data: "Março 2026",
-    ambito: "Freguesias Rurais",
-    evidencia: "Apresentado requerimento formal para mapeamento de prioridades pelo setor de obras municipais.",
-    documentoUrl: "assets/docs/exemplo-requerimento-vias.pdf"
+    titulo: "IMI no mínimo e alargamento da isenção",
+    categoria: "Habitação & Fiscalidade",
+    proposta: "Defendi a manutenção da taxa de IMI no mínimo e o alargamento da isenção de três para cinco anos, nos casos aplicáveis, para aliviar os encargos das famílias com a habitação.",
+    pontoSituacao: "A manutenção da taxa de IMI no mínimo e o alargamento da isenção para cinco anos são hoje uma realidade, nos casos aplicáveis.",
+    estado: "Concretizada",
+    data: "Concretizada",
+    ambito: "Concelho de Anadia"
   },
   {
     id: 5,
-    titulo: "Auditoria Externa às Contas e Concessões Municipais",
-    categoria: "Transparência & Gestão",
-    descricao: "Realização de uma auditoria financeira e jurídica independente a todos os contratos de concessão em curso no município de Anadia nos últimos anos.",
-    estado: "Em análise",
-    data: "Janeiro 2026",
-    ambito: "Município de Anadia",
-    evidencia: "Proposta submetida a discussão em Reunião de Câmara para análise pelo executivo.",
-    documentoUrl: "assets/docs/exemplo-proposta-auditoria.pdf"
+    titulo: "150 apartamentos a custos controlados",
+    categoria: "Habitação & Juventude",
+    proposta: "Assumi o compromisso de promover a disponibilização de 150 apartamentos a custos controlados ao longo do mandato, para facilitar o acesso à habitação e ajudar a fixar jovens e famílias em Anadia.",
+    pontoSituacao: "Em 2026, consegui captar investimento privado para 62 apartamentos, cuja entrega está praticamente concluída. Destes, 20 destinam-se a jovens que recorrem ao financiamento a 100%. É um avanço no compromisso de promover os 150 apartamentos ao longo do mandato.",
+    estado: "Parcialmente concretizada",
+    data: "2026 — Em curso",
+    ambito: "Concelho de Anadia"
   },
   {
     id: 6,
-    titulo: "Criação do Conselho Municipal de Segurança e Vigilância Ativa",
-    categoria: "Segurança & Proteção",
-    descricao: "Reforço da articulação com a GNR, reforço de meios nas zonas industriais e implementação de iluminação LED inteligente em pontos críticos.",
-    estado: "Em execução",
-    data: "Novembro 2025",
-    ambito: "Concelho de Anadia",
-    evidencia: "Aprovada por unanimidade a reativação do Conselho Municipal de Segurança com reuniões periódicas.",
-    documentoUrl: "assets/docs/exemplo-conselho-seguranca.pdf"
-  },
-  {
-    id: 7,
-    titulo: "Incentivos Fiscais à Criação de Emprego nas Zonas Industriais",
-    categoria: "Economia & Emprego",
-    descricao: "Pacote de benefícios fiscais municipais para empresas que criem postos de trabalho permanentes para residentes do concelho de Anadia.",
-    estado: "Implementada",
-    data: "Outubro 2025",
-    ambito: "Zonas Industriais de Anadia",
-    evidencia: "Regulamento Municipal de Apoio ao Investimento publicado em Diário da República.",
-    documentoUrl: "assets/docs/exemplo-regulamento-investimento.pdf"
-  },
-  {
-    id: 8,
-    titulo: "Gabinete Móvel de Proximidade Autárquica às 10 Freguesias",
-    categoria: "Proximidade Cívica",
-    descricao: "Iniciativa de atendimento descentralizado e regular aos cidadãos nas sedes de todas as 10 freguesias do concelho para auscultação direta de problemas.",
-    estado: "Implementada",
-    data: "Setembro 2025",
-    ambito: "10 Freguesias de Anadia",
-    evidencia: "Calendário de atendimento quinzenal divulgado nas juntas de freguesia.",
-    documentoUrl: "assets/docs/exemplo-gabinete-movel.pdf"
-  },
-  {
-    id: 9,
-    titulo: "Redução Substancial das Tarifas Municipais de Água e Saneamento",
-    categoria: "Ambiente & Serviços Básicos",
-    descricao: "Revisão em baixa das taxas fixas e variáveis dos serviços de água e saneamento cobradas às famílias de Anadia.",
-    estado: "Não implementada",
-    data: "Fevereiro 2026",
-    ambito: "Concelho de Anadia",
-    evidencia: "Proposta rejeitada pela maioria governativa da Câmara Municipal em votação orçamental.",
-    documentoUrl: "assets/docs/exemplo-votacao-tarifas.pdf"
-  },
-  {
-    id: 10,
-    titulo: "Programa Municipal de Transporte Escolar Gratuito Alargado",
-    categoria: "Educação & Juventude",
-    descricao: "Extensão da gratuitidade dos passes de transporte escolar a todos os níveis de ensino básico e secundário para deslocações dentro do concelho.",
-    estado: "Em análise",
-    data: "Abril 2026",
-    ambito: "Concelho de Anadia",
-    evidencia: "Estudo de impacto orçamental solicitado aos serviços municipais de educação.",
-    documentoUrl: "assets/docs/exemplo-transporte-escolar.pdf"
-  },
-  {
-    id: 11,
-    titulo: "Apoio Direto às Associações Culturais, Desportivas e Humanitárias",
-    categoria: "Cultura & Desporto",
-    descricao: "Critérios objetivos e transparentes para a atribuição de subsídios às associações e corporações de bombeiros voluntários do concelho.",
-    estado: "Em execução",
-    data: "Janeiro 2026",
-    ambito: "Concelho de Anadia",
-    evidencia: "Novo regulamento de apoio ao associativismo em fase de discussão pública.",
-    documentoUrl: "assets/docs/exemplo-associativismo.pdf"
-  },
-  {
-    id: 12,
-    titulo: "Transmissão Direta em Vídeo das Sessões de Câmara e Assembleia",
-    categoria: "Transparência & Gestão",
-    descricao: "Transmissão integral em direto via internet (YouTube/Facebook) de todas as reuniões públicas da Câmara Municipal e sessões da Assembleia Municipal.",
-    estado: "Não implementada",
-    data: "Outubro 2025",
-    ambito: "Concelho de Anadia",
-    evidencia: "Aguardando aprovação de parecer técnico sobre equipamentos de gravação.",
-    documentoUrl: "assets/docs/exemplo-transmissao-sessoes.pdf"
+    titulo: "Gabinete de Apoio ao Investimento",
+    categoria: "Economia & Empreendedorismo",
+    proposta: "Propus a criação de um Gabinete de Apoio ao Investimento para acompanhar empresas e empreendedores, facilitar os processos municipais e atrair projetos que criem emprego e dinamizem a economia de Anadia.",
+    pontoSituacao: "A criação do gabinete está em curso. Continuarei a acompanhar o processo até à sua concretização, para que empresas e empreendedores tenham um apoio mais próximo no desenvolvimento dos seus projetos.",
+    estado: "Em andamento",
+    data: "Mandato 2025–2029",
+    ambito: "Concelho de Anadia"
   }
 ];
 
-window.PROPOSTAS_DATA = PROPOSTAS_DATA;
+if (typeof window !== 'undefined') {
+  window.PROPOSTAS_DATA = PROPOSTAS_DATA;
+}
