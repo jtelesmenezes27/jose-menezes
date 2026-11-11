@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deputados Municipais do CHEGA na Assembleia Municipal de Anadia e consulta das atas das sessões.">
+  <title>Deputados Municipais | CHEGA Anadia — José Menezes</title>
+  
+  <!-- Favicon para todos os navegadores -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar Principal (Fixa no topo) -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="logoJoseMenezes" title="José Menezes — Vereador não executivo da Câmara Municipal de Anadia" aria-label="Logótipo de José Menezes">
+        <img src="assets/images/logo-jose-menezes.png" alt="Logótipo de José Menezes" class="logo-img">
+      </a>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="compromissos.html" class="nav-link">Medidas Concretizadas</a></li>
+          <li><a href="a-sua-voz-conta.html" class="nav-link">A Sua Voz Conta</a></li>
+          <li><a href="reunioes.html" class="nav-link">Reuniões</a></li>
+          <li><a href="deputados-municipais.html" class="nav-link active">Deputados Municipais</a></li>
+          <li><a href="concelhia.html" class="nav-link">Concelhia</a></li>
+          <li><a href="freguesias.html" class="nav-link">Freguesias</a></li>
+          <li><a href="militantes.html" class="nav-link">Militantes</a></li>
+          <li><a href="comunidade.html" class="nav-link">Comunidade</a></li>
+        </ul>
+      </nav>
+
+      <a href="index.html" class="header-anadia-mark" aria-label="CHEGA Anadia">ANADIA</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero da Página -->
+    <section class="page-hero" style="text-align: center;">
+      <div class="container page-hero-container">
+        <h1 class="page-hero-title" style="margin-bottom: 0;">Deputados Municipais</h1>
+      </div>
+    </section>
+
+    <!-- 1. Secção — Bancada na Assembleia Municipal (6 Deputados) -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 4rem;">
+      <div class="container">
+
+        <div class="concelhia-section-header">
+          <span class="section-tag">Assembleia Municipal de Anadia</span>
+          <h2 class="section-title text-left" style="margin-bottom: 0.5rem;">Bancada Municipal do CHEGA</h2>
+          <p class="text-muted" style="font-size: 1rem; max-width: 800px; margin: 0;">
+            Representantes eleitos na Assembleia Municipal de Anadia responsáveis pela fiscalização da atividade autárquica e defesa dos munícipes.
+          </p>
+        </div>
+
+        <!-- Grelha dos 6 Deputados Municipais -->
+        <div class="concelhia-grid" id="deputadosGrid" style="max-width: 720px;">
+          <!-- Os cartões são renderizados automaticamente via js/data/deputados.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Faixa Divisória Institucional -->
+    <div class="concelhia-divider-band" role="separator" aria-hidden="true"></div>
+
+    <!-- 2. Secção — Atas da Assembleia Municipal -->
+    <section class="section section-bg-light" style="padding-top: 4rem; padding-bottom: 5rem;" aria-label="Atas da Assembleia Municipal">
+      <div class="container">
+
+        <div class="concelhia-section-header">
+          <span class="section-tag">Documentação Oficial</span>
+          <h2 class="section-title text-left" style="margin-bottom: 0.5rem;">Atas da Assembleia Municipal</h2>
+          <p class="text-muted" style="font-size: 1rem; max-width: 800px; margin: 0;">
+            Consulte as atas das sessões ordinárias e extraordinárias da Assembleia Municipal de Anadia em formato PDF (dados demonstrativos).
+          </p>
+        </div>
+
+        <div class="ordens-grid" id="atasDeputadosGrid">
+          <!-- Renderizado via js/data/deputados.js -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Coluna 1: Identidade -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-logo">
+            <div class="logo-symbol" style="width: 38px; height: 38px; font-size: 1rem;">JM</div>
+            <div>
+              <strong style="color: #FFFFFF; font-size: 1.1rem; display: block;">JOSÉ MENEZES</strong>
+              <span style="color: #9CA3AF; font-size: 0.75rem; text-transform: uppercase;">Vereador não executivo da Câmara Municipal de Anadia</span>
+            </div>
+          </a>
+          <p>
+            Espaço oficial de prestação de contas, transparência e contacto direto com os munícipes do concelho de Anadia.
+          </p>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div>
+          <h4 class="footer-heading">Páginas do Website</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="compromissos.html">Medidas Concretizadas</a></li>
+            <li><a href="a-sua-voz-conta.html">A Sua Voz Conta</a></li>
+            <li><a href="reunioes.html">Reuniões de Câmara</a></li>
+            <li><a href="deputados-municipais.html">Deputados Municipais</a></li>
+            <li><a href="concelhia.html">Concelhia</a></li>
+            <li><a href="freguesias.html">Freguesias</a></li>
+            <li><a href="militantes.html">Militantes</a></li>
+            <li><a href="comunidade.html">Comunidade WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Freguesias de Anadia -->
+        <div>
+          <h4 class="footer-heading">Concelho de Anadia</h4>
+          <ul class="footer-links-list" style="font-size: 0.8125rem;">
+            <li><a href="freguesias/arcos-e-mogofores.html">Arcos e Mogofores</a></li>
+            <li><a href="freguesias/amoreira-da-gandara-paredes-do-bairro-e-ancas.html">Amoreira da Gândara, Paredes do Bairro e Ancas</a></li>
+            <li><a href="freguesias/avelas-de-caminho.html">Avelãs de Caminho</a></li>
+            <li><a href="freguesias/avelas-de-cima.html">Avelãs de Cima</a></li>
+            <li><a href="freguesias/moita.html">Moita</a></li>
+            <li><a href="freguesias/sangalhos.html">Sangalhos</a></li>
+            <li><a href="freguesias/sao-lourenco-do-bairro.html">São Lourenço do Bairro</a></li>
+            <li><a href="freguesias/tamengos-aguim-e-ois-do-bairro.html">Tamengos, Aguim e Óis do Bairro</a></li>
+            <li><a href="freguesias/vila-nova-de-monsarros.html">Vila Nova de Monsarros</a></li>
+            <li><a href="freguesias/vilarinho-do-bairro.html">Vilarinho do Bairro</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contactos & Informação Institucional -->
+        <div>
+          <h4 class="footer-heading">Gabinete da Vereação</h4>
+          <p style="font-size: 0.875rem; color: #9CA3AF; line-height: 1.6; margin-bottom: 1rem;">
+            Câmara Municipal de Anadia<br>
+            Praça do Município<br>
+            3780-215 Anadia, Portugal
+          </p>
+          <p style="font-size: 0.8125rem; color: #6B7280; line-height: 1.5;">
+            Estrutura política e autárquica ao serviço de Anadia, norteada pelos princípios de rigor, transparência e proximidade com as populações.
+          </p>
+        </div>
+      </div>
+
+      <!-- Barra de Direitos -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 José Menezes — Todos os direitos reservados.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#header">Voltar ao topo ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/data/deputados.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // 1. Renderizar 6 Deputados Municipais
+      const deputadosContainer = document.getElementById('deputadosGrid');
+      if (deputadosContainer && typeof DEPUTADOS_DATA !== 'undefined' && DEPUTADOS_DATA.deputados) {
+        deputadosContainer.innerHTML = DEPUTADOS_DATA.deputados.map(member => `
+          <article class="concelhia-card">
+            <div class="concelhia-card-photo">
+              <img src="${escapeHtml(member.foto)}" alt="${escapeHtml(member.nome)}" loading="lazy">
+            </div>
+            <div class="concelhia-card-body">
+              <h3 class="concelhia-card-name">${escapeHtml(member.nome)}</h3>
+              <p class="concelhia-card-role">${escapeHtml(member.cargo)}</p>
+              ${member.militante ? `<p class="concelhia-card-militante">Militante n.º ${escapeHtml(member.militante)}</p>` : ''}
+            </div>
+          </article>
+        `).join('');
+      }
+
+      // 2. Renderizar Atas da Assembleia Municipal com ícones de PDF
+      const atasContainer = document.getElementById('atasDeputadosGrid');
+      if (atasContainer && typeof DEPUTADOS_DATA !== 'undefined' && DEPUTADOS_DATA.atas) {
+        atasContainer.innerHTML = DEPUTADOS_DATA.atas.map(ata => `
+          <a href="${escapeHtml(ata.pdfUrl)}" class="ordem-item-link ata-item-link" title="Abrir PDF da Ata (Demonstrativo)">
+            <div class="ordem-item-left">
+              <div class="pdf-icon-box" aria-hidden="true">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-6 4h4"/></svg>
+              </div>
+              <div class="ata-item-info">
+                <span class="ordem-item-title">${escapeHtml(ata.titulo)}</span>
+                <span class="ata-item-date">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Data da sessão: ${escapeHtml(ata.data)}
+                </span>
+              </div>
+            </div>
+            <span class="ordem-item-action">PDF ↗</span>
+          </a>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

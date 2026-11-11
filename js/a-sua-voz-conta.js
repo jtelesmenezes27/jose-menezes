@@ -90,10 +90,7 @@ function initParticipacaoForm() {
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        showFeedback('success', `
-          <strong>Mensagem enviada com sucesso!</strong><br>
-          Agradecemos a sua participação. A sua mensagem foi registada e será analisada com a máxima atenção pela equipa do vereador José Menezes.
-        `);
+        showSuccessModal();
         form.reset();
         if (charCounter) charCounter.textContent = '0 / 1200 carateres';
       }, 700);
@@ -114,14 +111,22 @@ function initParticipacaoForm() {
 
       // Inicializa o EmailJS se disponível
       if (typeof emailjs !== 'undefined') {
-        emailjs.init(SITE_CONFIG.emailjs.publicKey);
+        emailjs.init({ publicKey: SITE_CONFIG.emailjs.publicKey });
+
+        const emailVal = (emailInput && emailInput.value.trim()) || 'Não fornecido';
+        const assuntoVal = form.assunto.value || 'Geral';
 
         const templateParams = {
-          from_name: nome,
-          reply_to: (emailInput && emailInput.value.trim()) || 'Não fornecido',
+          nome: nome,
+          email: emailVal,
           freguesia: freguesia,
-          assunto: form.assunto.value || 'Geral',
-          mensagem: mensagem
+          assunto: assuntoVal,
+          mensagem: mensagem,
+          // Aliases padrão do EmailJS para total compatibilidade com qualquer template
+          from_name: nome,
+          reply_to: emailVal,
+          subject: assuntoVal,
+          message: mensagem
         };
 
         await emailjs.send(
@@ -130,10 +135,7 @@ function initParticipacaoForm() {
           templateParams
         );
 
-        showFeedback('success', `
-          <strong>Mensagem enviada com sucesso!</strong><br>
-          Obrigado pela sua participação. A sua mensagem foi encaminhada para a equipa do vereador José Menezes.
-        `);
+        showSuccessModal();
         form.reset();
         if (charCounter) charCounter.textContent = '0 / 1200 carateres';
       } else {
@@ -160,5 +162,59 @@ function initParticipacaoForm() {
     feedbackEl.innerHTML = html;
     feedbackEl.style.display = 'flex';
     feedbackEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function showSuccessModal() {
+    if (feedbackEl) {
+      feedbackEl.style.display = 'none';
+      feedbackEl.innerHTML = '';
+    }
+
+    const existing = document.getElementById('formSuccessModal');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'formSuccessModal';
+    overlay.className = 'form-success-modal-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.innerHTML = `
+      <div class="form-success-modal-card">
+        <div class="form-success-check-circle" aria-hidden="true">
+          <svg class="form-success-check-svg" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="form-success-modal-title">A sua sugestão ou preocupação foi enviada!</h3>
+        <p class="form-success-modal-desc">
+          Obrigado pela sua participação. A sua mensagem foi encaminhada com sucesso para a equipa do vereador José Menezes.
+        </p>
+        <button type="button" class="form-success-modal-btn" id="closeSuccessModalBtn">
+          Fechar
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const closeModal = () => {
+      overlay.remove();
+      document.removeEventListener('keydown', onKeyDown);
+    };
+
+    const onKeyDown = (ev) => {
+      if (ev.key === 'Escape') closeModal();
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    overlay.addEventListener('click', (ev) => {
+      if (ev.target === overlay) closeModal();
+    });
+
+    const closeBtn = overlay.querySelector('#closeSuccessModalBtn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+      closeBtn.focus();
+    }
   }
 }

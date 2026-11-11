@@ -57,6 +57,53 @@ function initMobileNav() {
 }
 
 /**
+ * Apresenta aviso informativo quando o grupo de WhatsApp ainda não está disponível
+ */
+function showWhatsAppIndisponivelModal() {
+  const existing = document.getElementById('whatsappUnavailableModal');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'whatsappUnavailableModal';
+  overlay.className = 'form-success-modal-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+
+  overlay.innerHTML = `
+    <div class="form-success-modal-card" style="border-top: 5px solid #25D366; max-width: 480px;">
+      <div class="form-success-check-circle" style="background-color: #E8FBF0; border-color: #86EFAC; color: #25D366;">
+        <svg width="38" height="38" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+        </svg>
+      </div>
+      <h3 class="form-success-modal-title" style="color: var(--color-navy, #1D1744); margin-bottom: 0.75rem;">
+        Grupo de WhatsApp em Breve
+      </h3>
+      <p class="form-success-modal-desc" style="color: #4B5563; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+        O grupo oficial da comunidade de WhatsApp ainda não se encontra disponível. Estamos a finalizar os preparativos para disponibilizar este espaço muito em breve a todos os munícipes.<br><br>
+        Entretanto, pode enviar diretamente as suas sugestões, preocupações ou mensagens a José Menezes através da página «A Sua Voz Conta».
+      </p>
+      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <a href="a-sua-voz-conta.html" class="form-success-modal-btn" style="text-decoration: none; background-color: var(--color-red, #D9232E); padding: 0.75rem 1.4rem;">
+          Ir para «A Sua Voz Conta» →
+        </a>
+        <button type="button" class="form-success-modal-btn" id="btnCloseWhatsAppModal" style="background-color: #6B7280; padding: 0.75rem 1.4rem;">
+          Entendido
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const close = () => overlay.remove();
+  overlay.querySelector('#btnCloseWhatsAppModal').addEventListener('click', close);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) close();
+  });
+}
+
+/**
  * Sincronização dos links de configuração global (Redes Sociais, WhatsApp, etc.)
  */
 function initGlobalLinks() {
@@ -64,15 +111,17 @@ function initGlobalLinks() {
 
   // Atualizar hiperligações de WhatsApp
   document.querySelectorAll('[data-config-link="whatsapp"]').forEach(el => {
-    el.setAttribute('href', SITE_CONFIG.whatsappInviteUrl);
     if (!SITE_CONFIG.isWhatsAppConfigured()) {
+      el.setAttribute('href', 'javascript:void(0);');
+      el.removeAttribute('target');
       el.addEventListener('click', (e) => {
-        // Se a hiperligação direta ainda não estiver definida, apresenta mensagem institucional
-        if (SITE_CONFIG.whatsappInviteUrl.includes('SEU_LINK_DE_CONVITE_AQUI')) {
-          e.preventDefault();
-          alert('Comunidade WhatsApp José Menezes:\n\nO acesso à comunidade exclusiva está a ser disponibilizado. Para qualquer questão ou envio de mensagem direta, utilize a página «A Sua Voz Conta».');
-        }
+        e.preventDefault();
+        showWhatsAppIndisponivelModal();
       });
+    } else {
+      el.setAttribute('href', SITE_CONFIG.whatsappInviteUrl);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
     }
   });
 
