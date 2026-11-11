@@ -1094,6 +1094,69 @@ button, input, textarea, select {
   line-height: 1.7;
 }
 
+.about-intro-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 360px);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.about-video-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-video-card h3 {
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-navy);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.short-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  background-color: #000000;
+  margin: auto 0;
+}
+
+.short-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.about-video-caption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+  .short-video-wrapper {
+    max-width: 320px;
+  }
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -3582,17 +3645,84 @@ textarea.form-control {
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
   .presentation-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .presentation-content {
+    display: contents;
+  }
+
+  .presentation-badge-group {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
   }
 
   .presentation-image-wrapper {
-    order: -1;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.75rem;
   }
 
   .presentation-photo-frame {
-    max-width: 340px;
+    max-width: 300px;
     margin: 0 auto;
+    border-bottom: 4px solid var(--color-red);
+  }
+
+  .presentation-photo-inner {
+    padding: 1.25rem 1.25rem 0;
+  }
+
+  .presentation-photo-caption {
+    display: none;
+  }
+
+  .presentation-name {
+    order: 3;
+    text-align: center;
+    margin-bottom: 0.35rem;
+    width: 100%;
+  }
+
+  .presentation-role {
+    order: 4;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .presentation-divider {
+    order: 5;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .presentation-tagline {
+    order: 6;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+
+  .presentation-lead {
+    order: 7;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .hero-pillars {
+    order: 8;
+    width: 100%;
   }
 
   .reunioes-panoramic-banner {
@@ -3830,7 +3960,7 @@ textarea.form-control {
   }
 
   .presentation-photo-frame {
-    max-width: 320px;
+    max-width: 280px;
   }
 
   .presentation-caption-name {
