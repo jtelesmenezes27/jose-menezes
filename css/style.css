@@ -1094,6 +1094,62 @@ button, input, textarea, select {
   line-height: 1.7;
 }
 
+.about-intro-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 360px);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.about-video-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-video-card h3 {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.short-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 310px;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  background-color: #000000;
+  margin: auto 0;
+}
+
+.short-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.about-video-caption {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+  .short-video-wrapper {
+    max-width: 320px;
+  }
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
