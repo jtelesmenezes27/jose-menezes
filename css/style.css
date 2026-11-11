@@ -1109,6 +1109,13 @@ button, input, textarea, select {
 .about-video-card h3 {
   width: 100%;
   justify-content: flex-start;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-navy);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .short-video-wrapper {
