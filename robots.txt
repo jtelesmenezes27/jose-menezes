@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jtelesmenezes27.github.io/jose-menezes/sitemap.xml
