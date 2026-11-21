@@ -19,9 +19,9 @@ const DEPUTADOS_DATA = {
     },
     {
       id: 3,
-      nome: "Deputado Demonstrativo 3",
-      cargo: "Deputado Municipal",
-      foto: "assets/images/placeholder-avatar.svg"
+      nome: "Daniela da Costa Silva",
+      cargo: "Deputada Municipal",
+      foto: "assets/images/concelhia/daniela-silva.jpg"
     },
     {
       id: 4,
