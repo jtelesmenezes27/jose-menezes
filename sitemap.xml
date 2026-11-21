@@ -2,13 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Página Inicial -->
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/</loc>
-    <lastmod>2026-11-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/index.html</loc>
+    <loc>https://josemenezeschega.pt/</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -16,49 +10,49 @@
 
   <!-- Páginas Principais -->
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/compromissos.html</loc>
+    <loc>https://josemenezeschega.pt/compromissos.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/reunioes.html</loc>
+    <loc>https://josemenezeschega.pt/reunioes.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/a-sua-voz-conta.html</loc>
+    <loc>https://josemenezeschega.pt/a-sua-voz-conta.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/deputados-municipais.html</loc>
+    <loc>https://josemenezeschega.pt/deputados-municipais.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/concelhia.html</loc>
+    <loc>https://josemenezeschega.pt/concelhia.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/militantes.html</loc>
+    <loc>https://josemenezeschega.pt/militantes.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/comunidade.html</loc>
+    <loc>https://josemenezeschega.pt/comunidade.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -66,61 +60,61 @@
 
   <!-- Freguesias de Anadia -->
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/arcos-e-mogofores.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/arcos-e-mogofores.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/amoreira-da-gandara-paredes-do-bairro-e-ancas.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/amoreira-da-gandara-paredes-do-bairro-e-ancas.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/avelas-de-caminho.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/avelas-de-caminho.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/avelas-de-cima.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/avelas-de-cima.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/moita.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/moita.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/sangalhos.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/sangalhos.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/sao-lourenco-do-bairro.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/sao-lourenco-do-bairro.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/tamengos-aguim-e-ois-do-bairro.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/tamengos-aguim-e-ois-do-bairro.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/vila-nova-de-monsarros.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/vila-nova-de-monsarros.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://jtelesmenezes27.github.io/jose-menezes/freguesias/vilarinho-do-bairro.html</loc>
+    <loc>https://josemenezeschega.pt/freguesias/vilarinho-do-bairro.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
