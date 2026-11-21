@@ -7,9 +7,9 @@ const DEPUTADOS_DATA = {
   deputados: [
     {
       id: 1,
-      nome: "Deputado Demonstrativo 1",
+      nome: "Jorge Semedo",
       cargo: "Deputado Municipal",
-      foto: "assets/images/placeholder-avatar.svg"
+      foto: "assets/images/concelhia/jorge-semedo.png"
     },
     {
       id: 2,
